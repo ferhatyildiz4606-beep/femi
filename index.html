@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEMİ GALAKTİK REHBER | Evrenin Harikaları</title>
+    <style>
+        /* --- CSS STİLLERİ (NEON & DÜZEN) --- */
+        :root {
+            --neon-blue: #00f3ff;
+            --neon-purple: #bc13fe;
+            --bg-dark: #02020a;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --text-main: #e0e0e0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Montserrat', 'Segoe UI', sans-serif; /* Daha modern bir font */
+            overflow-x: hidden;
+        }
+
+        /* Gerçek Yıldız Arka Planı (NASA Image) */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images-assets.nasa.gov/image/PIA12348/PIA12348~orig.jpg'); /* Derin uzay alanı */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3; /* Yazıların okunması için hafifletildi */
+            z-index: -1;
+        }
+
+        /* --- HEADER VE ANA BAŞLIK (FEMİ) --- */
+        header {
+            height: 80vh; /* Biraz daha kısa */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .neon-title-main {
+            font-size: 8rem; /* Çok büyük ve dikkat çekici */
+            margin: 0;
+            font-weight: 900;
+            letter-spacing: 15px;
+            color: #fff;
+            text-shadow: 
+                0 0 10px #fff,
+                0 0 20px #fff,
+                0 0 40px var(--neon-purple),
+                0 0 80px var(--neon-purple),
+                0 0 120px var(--neon-purple);
+            animation: pulsateMain 2s infinite alternate;
+        }
+
+        @keyframes pulsateMain {
+            100% { text-shadow: 0 0 10px #fff, 0 0 30px #fff, 0 0 50px var(--neon-purple), 0 0 100px var(--neon-purple); }
+            0% { text-shadow: 0 0 5px #fff, 0 0 15px #fff, 0 0 25px var(--neon-purple), 0 0 60px var(--neon-purple); }
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            color: var(--neon-blue);
+            text-transform: uppercase;
+            margin-top: 20px;
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        /* --- KART DÜZENİ VE GÖK CİSİMLERİ --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Esnek yerleşim */
+            gap: 40px;
+            padding: 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .celestial-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(188, 19, 254, 0.2);
+            border-radius: 20px;
+            overflow: hidden; /* Görsellerin taşmasını önler */
+            backdrop-filter: blur(10px);
+            transition: 0.5s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .celestial-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: var(--neon-purple);
+            box-shadow: 0 0 40px rgba(188, 19, 254, 0.5);
+        }
+
+        /* Kart Görselleri */
+        .card-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover; /* Resmi sığdırır */
+            border-bottom: 2px solid var(--neon-purple);
+        }
+
+        /* Kart İçeriği */
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content h2 {
+            font-size: 1.8rem;
+            margin-top: 0;
+            color: var(--neon-purple);
+            text-shadow: 0 0 10px var(--neon-purple);
+        }
+
+        /* Mavi Neon Alternatifi (Örn: Kara Delik) */
+        .card-blue {
+            border-color: rgba(0, 243, 255, 0.2);
+        }
+        .card-blue:hover {
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 40px rgba(0, 243, 255, 0.5);
+        }
+        .card-blue .card-image {
+            border-bottom: 2px solid var(--neon-blue);
+        }
+        .card-blue h2 {
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        .card-content p {
+            line-height: 1.7;
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="neon-title-main">FEMİ</h1>
+        <p class="subtitle">GALAKTİK KEŞİF PORTALI</p>
+    </header>
+
+    <div class="grid-container">
+
+        <div class="celestial-card">
+            <img src="https://images-assets.nasa.gov/image/hubble-captures-a-cosmic-cloud-of-gas-and-dust_32011703673_o/hubble-captures-a-cosmic-cloud-of-gas-and-dust_32011703673_o~orig.jpg" alt="Orion Nebulası" class="card-image">
+            <div class="card-content">
+                <h2>NEBULA (Bulutsu)</h2>
+                <p>Yeni yıldızların doğduğu devasa gaz ve toz bulutlarıdır. Görseldeki Orion Nebulası, çıplak gözle görülebilen en parlak bulutsulardan biridir ve binlerce yeni yıldıza ev sahipliği yapar.</p>
+            </div>
+        </div>
+
+        <div class="celestial-card card-blue">
+            <img src="https://www.nasa.gov/wp-content/uploads/2019/04/p1920a4.jpg" alt="Kara Delik" class="card-image">
+            <div class="card-content">
+                <h2>KARA DELİK</h2>
+                <p>Kütleçekiminin o kadar güçlü olduğu bölgelerdir ki, ışık bile kaçamaz. Bu görsel, M87 galaksisinin merkezindeki süper kütleli kara deliğin Event Horizon Telescope tarafından çekilen tarihi ilk fotoğrafıdır.</p>
+            </div>
+        </div>
+
+        <div class="celestial-card">
+            <img src="https://images-assets.nasa.gov/image/PIA01364/PIA01364~orig.jpg" alt="Satürn" class="card-image">
+            <div class="card-content">
+                <h2>SATÜRN (Gezegen)</h2>
+                <p>Güneş Sistemi'nin en ikonik gezegeni. Muazzam halka sistemi, buz ve kaya parçacıklarından oluşur. Bu halkalar, gezegenin kütleçekimi tarafından parçalanmış eski uydular veya asteroidler olabilir.</p>
+            </div>
+        </div>
+
+        <div class="celestial-card card-blue">
+            <img src="https://images-assets.nasa.gov/image/PIA12348/PIA12348~orig.jpg" alt="Andromeda Galaksisi" class="card-image">
+            <div class="card-content">
+                <h2>ANDROMEDA (Galaksi)</h2>
+                <p>Samanyolu'na en yakın spiral galaksidir. Yaklaşık 1 trilyon yıldıza ev sahipliği yapar ve bize saniyede 110 kilometre hızla yaklaşmaktadır. Birkaç milyar yıl sonra Samanyolu ile çarpışacaktır.</p>
+            </div>
+        </div>
+
+        <div class="celestial-card">
+            <img src="https://images-assets.nasa.gov/image/hubble-captures-the-beating-heart-of-the-crab-nebula_27732297123_o/hubble-captures-the-beating-heart-of-the-crab-nebula_27732297123_o~orig.jpg" alt="Crab Nebula" class="card-image">
+            <div class="card-content">
+                <h2>SÜPERNOVA KALINTISI</h2>
+                <p>Dev bir yıldızın ömrünün sonundaki muazzam patlamadan geriye kalanlardır. Crab Nebula (Yengeç Bulutsusu), MS 1054 yılında Çinli astronomlar tarafından kaydedilen tarihi bir süpernovanın kalıntısıdır.</p>
+            </div>
+        </div>
+
+        <div class="celestial-card card-blue">
+            <img src="https://images-assets.nasa.gov/image/hubble-captures-vivid-auroras-in-jupiters-atmosphere_28036070601_o/hubble-captures-vivid-auroras-in-jupiters-atmosphere_28036070601_o~orig.jpg" alt="Jüpiter Aurora" class="card-image">
+            <div class="card-content">
+                <h2>GEZEGENSEL AURORA</h2>
+                <p>Sadece Dünya'da değil, güçlü manyetik alana sahip diğer gezegenlerde de kutup ışıkları oluşur. Hubble tarafından ultraviyole ışıkta çekilen bu görsel, Jüpiter'in kutuplarındaki muazzam auroraları gösterir.</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
